@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <link rel="stylesheet" href="../css/Init.css" media="screen" title="no title" charset="utf-8">
+  <style media="screen">
+
+
+
+     ul{
+
+       position: relative;
+     }
+
+     li{
+      position: absolute;
+      width: 50px;
+      line-height: 50px;
+      text-align: center;
+
+      color: #ffffff;
+
+     }
+     .red{
+       background: red;
+     }
+     .green{
+       background: green;
+     }
+     .blue{
+       background: blue;
+     }
+     .yellow{
+       background: yellow;
+     }
+
+  </style>
+
+  <script type="text/javascript">
+
+    window.onload=function(){
+
+      var button= document.getElementsByTagName('button')[0];
+
+      var ul=document.getElementsByTagName('ul')[0];
+        var left;
+        var top;
+        var str='';
+      button.onclick=function(){
+       left=-50;
+         top=0;
+        for(var i=0;i<100;i++){
+
+         if(i%4==0){
+
+           str += '<li class="red">'+i+'</li>';
+         }
+         if(i%4==1){
+
+           str += '<li class="yellow">'+i+'</li>';
+         }
+         if(i%4==2){
+
+           str += '<li class="green">'+i+'</li>';
+         }
+         if(i%4==3){
+
+           str += '<li class="blue">'+i+'</li>';
+         }
+
+
+        }
+
+          ul.innerHTML=str;
+
+          // console.log(ul);
+
+
+        var lis=ul.getElementsByTagName('li');
+
+          for(var i=0;i<100;i++){
+
+           var li=lis[i];
+          left += 50;
+          top=parseInt(i/10)*50;
+
+           if(i%10==0){
+          left =0;
+           }
+              li.style.left=left+'px';
+           li.style.top=top+'px';
+
+        }
+
+}
+
+
+    }
+  </script>
+
+
+
+
+  <body>
+
+  <button type="button" name="button">自动生成100个方块</button>
+
+   <ul>
+   </ul>
+
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+    ul{
+
+    border:2px solid red;
+
+    }
+
+    </style>
+
+     <script type="text/javascript">
+
+     window.onload = function(){
+
+       var ul=document.getElementsByTagName('ul')[0];
+
+       var button=document.getElementsByTagName('button')[0];
+
+        var flag=true;
+
+
+       var attr=['今天心情很好','今天心情很好','今天心情很好','今天心情很好','今天心情很好'];
+
+         button.onclick=function(){
+
+           if(flag){
+
+           for(var i=0;i<5;i++){
+
+          ul.innerHTML += '<li>'+attr[i]+'</li>';
+
+           }
+
+            flag =false;
+         }
+}
+
+
+
+     }
+
+
+     </script>
+
+  </head>
+  <body>
+
+    <button type="button" name="button">展示新闻</button>
+
+   <ul>
+
+   </ul>
+
+  </body>
+</html>

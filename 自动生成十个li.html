@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>自动生成10个li</title>
+<link rel="stylesheet" href="../css/Init.css" media="screen" title="no title" charset="utf-8">
+   <style media="screen">
+
+   ul{
+   position: relative;
+
+   }
+
+   li{
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    position: absolute;
+    /*margin-right: 20px;*/
+    border: 2px solid #e4e4e4;
+   }
+   .red{
+   background: red;
+   }.yellow{
+   background:yellow;
+   }.blue{
+   background: blue;
+   }
+   .green{
+   background: green;
+   }
+
+   </style>
+   <script type="text/javascript">
+
+   window.onload=function(){
+
+   var button=document.getElementsByTagName('button')[0];
+   var ul=document.getElementsByTagName('ul')[0];
+   var li=document.getElementsByTagName('li')[0];
+   var str='';
+   var flag=true;
+   button.onclick=function(){
+
+     if(flag){
+     for(var i=0;i<10;i++){
+
+     if(i%4==0){
+   str='<li class=red>'+i+'</li>';
+}         if(i%4==1){
+   str='<li class=yellow>'+i+'</li>';
+}
+          if(i%4==2){
+str='<li class=blue>'+i+'</li>';
+}             if(i%4==3){
+   str='<li class=green>'+i+'</li>';
+}
+
+   ul.innerHTML +=str;
+}
+
+   flag=false;
+}
+
+    var liattr=ul.getElementsByTagName('li');
+
+    for(var i=0;i<10;i++){
+
+
+    liattr[i].style.top=0+'px';
+    liattr[i].style.left=i*50 +'px';
+
+    }
+   }
+
+
+ }
+
+
+
+
+   </script>
+
+  </head>
+
+  <body>
+
+   <button type="button" name="button">自动生成li</button>
+
+   <ul>
+
+   </ul>
+
+
+  </body>
+</html>

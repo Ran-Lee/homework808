@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>自动生成V字形</title>
+ <link rel="stylesheet" href="../css/Init.css" media="screen" title="no title" charset="utf-8">
+<style media="screen">
+
+     ul{
+     position: relative;
+     width: 250px;
+     height: 250px;
+     background: #f7f7f7;
+    }
+
+   li{
+     width: 50px;
+     line-height: 50px;
+     text-align: center;
+     position: absolute;
+     background: red;
+     color:#ffffff;
+   }
+
+</style>
+
+<script type="text/javascript">
+  window.onload=function(){
+
+   var button=document.getElementsByTagName('button')[0];
+   var ul=document.getElementsByTagName('ul')[0];
+
+   var str ='';
+   var flag=true;
+   var now=-1;
+
+     button.onclick=function(){
+
+     now++;
+     var index = now%4;
+     if(flag){
+
+
+
+       for(var i=0;i<5;i++){
+      str='<li>'+i+'</li>';
+       ul.innerHTML +=str;
+}
+flag=false;
+   }
+    var liattr=ul.getElementsByTagName('li');
+
+
+     if(index==0){
+
+       for(var i=0;i<5;i++){
+       liattr[i].style.left=i*50+'px';
+      if(i>2){
+        liattr[i].style.top=100-(i-2)*50+'px';
+      }
+      else{
+        liattr[i].style.top=i*50+'px';
+      }
+       }
+}
+      else if(index==1){
+       for(var i=0;i<5;i++){
+       liattr[i].style.top=i*50+'px';
+      if(i>2){
+        liattr[i].style.left=100-(i-2)*50+'px';
+      }
+      else{
+        liattr[i].style.left=i*50+'px';
+      }
+       }
+}
+      else if(index==2){
+       for(var i=0;i<5;i++){
+       liattr[i].style.left=i*50+'px';
+      if(i>2){
+        liattr[i].style.top=100+(i-2)*50+'px';
+      }
+      else{
+        liattr[i].style.top=200-i*50+'px';
+      }
+       }
+}
+    if(index==3){
+       for(var i=0;i<5;i++){
+       liattr[i].style.top=i*50+'px';
+      if(i>2){
+        liattr[i].style.left=100+(i-2)*50+'px';
+      }
+      else{
+        liattr[i].style.left=200-i*50+'px';
+      }
+       }
+}
+
+
+
+
+
+}
+}
+</script>
+
+
+  </head>
+  <body>
+
+    <button type="button" name="button">自动生成V字形</button>
+
+  <ul>
+
+  </ul>
+
+  </body>
+</html>
